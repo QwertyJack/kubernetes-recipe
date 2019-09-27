@@ -1,0 +1,9 @@
+- hosts: all
+  become: True
+  roles:
+    - common
+
+- hosts: gluster
+  become: True
+  roles:
+    - gluster
