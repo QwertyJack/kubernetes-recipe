@@ -1,0 +1,30 @@
+# vim: set ts=2 sw=2 et:
+
+version: '3'
+        
+services:
+  haproxy:
+    container_name: ha
+    image: haproxy:alpine
+    restart: always
+    ports:
+    - "80:80"
+    - "443:443"
+    - "8443:8443"
+    volumes:
+    - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    environment:
+      KUBERNETES_LOADBLANCER_APISERVER_PORT: 6443
+      EXTERNAL_LOADBALANCER_PORT: 8443
+
+  heketi:
+    container_name: heketi
+    image: heketi/heketi
+    restart: always
+    ports:
+    - "8080:8080"
+    volumes:
+    - ./heketi/config:/etc/heketi
+    - ./heketi/db:/var/lib/heketi
+    environment:
+      HEKETI_CLI_SERVER: http://localhost:8080

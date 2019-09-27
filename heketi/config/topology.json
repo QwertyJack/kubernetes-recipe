@@ -1,0 +1,72 @@
+{
+    "clusters": [
+        {
+            "nodes": [
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.0.20.90"
+                            ],
+                            "storage": [
+                                "10.0.20.90"
+                            ]
+                        },
+                        "zone": 1
+                    },
+                    "devices": [
+                        "/dev/vdb"
+                    ]
+                },
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.0.20.91"
+                            ],
+                            "storage": [
+                                "10.0.20.91"
+                            ]
+                        },
+                        "zone": 2
+                    },
+                    "devices": [
+                        "/dev/vdb"
+                    ]
+                },
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.0.20.92"
+                            ],
+                            "storage": [
+                                "10.0.20.92"
+                            ]
+                        },
+                        "zone": 1
+                    },
+                    "devices": [
+                        "/dev/vdb"
+                    ]
+                },
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.0.20.93"
+                            ],
+                            "storage": [
+                                "10.0.20.93"
+                            ]
+                        },
+                        "zone": 2
+                    },
+                    "devices": [
+                        "/dev/vdb"
+                    ]
+                }
+            ]
+        }
+    ]
+}
