@@ -9,6 +9,7 @@ This tutorial will get you a production ready k8s cluster running on a single se
 - 3 k8s nodes (2 master + 1 worker)
 - an apiserver endpoint in HA mode
 - a standalone glusterfs cluster(2 + 2) + heketi api server + glusterfs storageclass
+- or nfs server on the host + nfs-client-provisioner + nfs storageclass
 - an external LB for bare metal
 
 You may scale the cluster at your needs.
@@ -52,6 +53,15 @@ Since in-cluster glusterfs may fail if you shutdown some gluster node, we choose
 - Create glusterfs storage class
 
 See `Standalone` in [Heketi Demos](https://github.com/heketi/vagrant-heketi) for further details.
+
+## NFS the Storage Class
+
+For simplicity we can also choose NFS as the storage.
+
+- Config NFS server on the host; make sure all k8s nodes are able to mount nfs
+- For security reason, the `nfs.path` should have perm 1777 and belong to `nobody:nogroup`
+- Install nfs client to all k8s nodes
+- Check [Kubernetes NFS-Client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) to set up
 
 ## LoadBalancer for Bare Metal
 
