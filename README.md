@@ -43,7 +43,9 @@ We use ha-proxy to achieve HA mode. See [HA endpoints for K8s](https://github.co
 - Set ip of master nodes in haproxy configuration file
 - Start `haproxy` in docker compose
 
-## Glusterfs the Storage Class
+## Storage Class
+
+### Glusterfs/Heketi
 
 Since in-cluster glusterfs may fail if you shutdown some gluster node, we choose standalone deployment.
 
@@ -54,7 +56,7 @@ Since in-cluster glusterfs may fail if you shutdown some gluster node, we choose
 
 See `Standalone` in [Heketi Demos](https://github.com/heketi/vagrant-heketi) for further details.
 
-## NFS the Storage Class
+### NFS
 
 For simplicity we can also choose NFS as the storage.
 
