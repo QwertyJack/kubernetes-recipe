@@ -42,6 +42,7 @@ We use ha-proxy to achieve HA mode. See [HA endpoints for K8s](https://github.co
 
 - Set ip of master nodes in haproxy configuration file
 - Start `haproxy` in docker compose
+- Everything should be fine after first launch, but failed after reboot: allow traffic from docker bridge to libvird bridge
 
 ## Storage Class
 
